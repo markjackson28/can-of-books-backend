@@ -8,15 +8,14 @@
 This repository has starter code to begin work on creating your own online bookshelf.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Refer to trello cards.
+> [Trello Board](https://trello.com/b/LhHdaHUV/301n22-bestbookstasktracker)
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+React, JavaScript, Auth0
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+- (08/16) Finished Lab11
 
 ## Credit and Collaborations
 - Clarissa P, Alex P, Phil M, JP J, 
@@ -82,9 +81,9 @@ Estimate of time needed to complete: 2 hours
 
 Start time: 2:30pm
 
-Finish time: _____
+Finish time: 6:00pm(08/16)
 
-Actual time needed to complete: _____
+Actual time needed to complete: 6 hours
 
 # Start your own "Can of Books" App
 
