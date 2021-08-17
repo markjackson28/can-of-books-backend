@@ -5,7 +5,7 @@
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This repository has starter code to begin work on creating your own online bookshelf.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -19,7 +19,10 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-- Clarissa P,
+- Clarissa P, Alex P, Phil M, JP J, 
+
+## UML
+> <img src="./pics/lab11_UML.jpg" alt="UML" width="200"/>
 
 *Logistical*
 
@@ -43,19 +46,19 @@
 
 > Make a list of each person’s strengths.
 
-- Disciplined.
+- Disciplined with tasks and google skills.
 
 > How can you best utilize these strengths in the development of your application?
 
-- TBC
+- To try to solve the problem ourselves first.
 
 > In what areas do you each want to develop greater strength?
 
-- 
+- Comfortable with being uncomfortable.
 
 > Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
 
-- 
+- Whatever a person does, make sure the partner understands what they just did.
 
 *Conflict Resolution*
 
