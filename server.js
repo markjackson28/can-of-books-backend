@@ -5,6 +5,10 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const jwksClient = require('jwks-rsa');
+const mongoose = require('mongoose');
+
+// Moduels
+const BookModel = require('./modules/books');
 
 const app = express();
 app.use(cors());
@@ -28,6 +32,18 @@ function getKey(header, callback) {
 }
 // -----------------------------------------------
 
+// Clears the database
+app.get('/clear', clear);
+async function clear(req, res) {
+  try {
+    await BookModel.deleteMany({});
+    res.status(200).send('Goodbye Database :(');
+  }
+  catch(err) {
+    res.status(500).send('Error Clearing Database');
+  }
+}
+
 
 app.get('/', (request, response) => {
   response.send('Hello, from the Can of Books server! :)');
@@ -49,8 +65,43 @@ app.get('/test', (request, response) => {
   });
 });
 
-  // STEP 3: to prove that everything is working correctly, send the opened jwt back to the front-end
-  // DONE
+app.get('/books', async (req, res) => {
+  try {
+    let booksdb = await BookModel.find({});
+    res.status(200).send(booksdb);
+  }
+  catch (err) {
+    res.status(500).send('DB Error');
+  }
+});
+
+// Book Schema
+// const bookSchema = new mongoose.Schema({
+//   title: { type: String, required: true },
+//   description: { type: String, required: true },
+//   status: { type: String, required: true },
+//   email: { type: String, required: true },
+// });
+
+// Book Model                        
+// const BookModel = mongoose.model('books', bookSchema);
+
+mongoose.connect('mongodb://127.0.0.1:27017/books', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(async () => {
+    console.log('Connected to the database');
+
+    let newBook = new BookModel({
+      title: 'Title2',
+      description: 'Description2',
+      status: '2002',
+      email: 'email@gmail.com2',
+    });
+    await newBook.save();
+  });
+
 
 
 app.get('/*', (request, response) => {
@@ -58,3 +109,4 @@ app.get('/*', (request, response) => {
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
