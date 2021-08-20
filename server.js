@@ -5,6 +5,10 @@ const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const jwksClient = require('jwks-rsa');
+const mongoose = require('mongoose');
+
+// Moduel requirements
+const BookModel = require('./modules/books');
 
 const app = express();
 app.use(cors());
@@ -29,32 +33,107 @@ function getKey(header, callback) {
 // -----------------------------------------------
 
 
-app.get('/', (request, response) => {
-  response.send('Hello, from the Can of Books server! :)');
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello, from the Can of Books server! :)');
 });
 
-app.get('/test', (request, response) => {
-
-  // TODO: DONE
-  // STEP 1: get the jwt from the headers
-  const token = request.headers.authorization.split(' ')[1];
-
-  // STEP 2. use the jsonwebtoken library to verify that it is a valid jwt
+app.get('/test', (req, res) => {
+  const token = req.headers.authorization.split(' ')[1];
   // jsonwebtoken dock - https://www.npmjs.com/package/jsonwebtoken
   jwt.verify(token, getKey, {}, function (err, user) {
     if (err) {
-      response.status(500).send('invalid token');
+      res.status(500).send('invlaid token');
     }
-    response.send(user);
+    res.send(user);
   });
 });
 
-  // STEP 3: to prove that everything is working correctly, send the opened jwt back to the front-end
-  // DONE
+// Task 6 create books route
+app.get('/books', async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+    jwt.verify(token, getKey, {}, function (err, user) {
+      if (err) {
+        res.status(500).send('Invalid token');
+      } else {
+        // Gets results from schema
+        BookModel.find((err, dbResults) => {
+          if (err) {
+            res.send();
+            console.log('Cannot access DB');
+          } else {
+            res.status(200).send(dbResults);
+          }
+        });
+      }
+    });
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).send('DB Error');
+  }
+});
 
+// Task 5: Seed the Database
+app.get('/seed', seed);
+async function seed(req, res) {
+  let books = await BookModel.find({});
+  if (books.length === 0) {
+    await addBook({
+      title: 'Title',
+      description: 'Description',
+      status: '200',
+      email: 'email@gmail.com',
+    });
+    await addBook({
+      title: 'Title2',
+      description: 'Description2',
+      status: '2002',
+      email: 'email@gmail.com2',
+    });
+    await addBook({
+      title: 'Title3',
+      description: 'Description3',
+      status: '2003',
+      email: 'email@gmail.com3',
+    });
+  }
+  res.send('Seeded the Database');
+}
+
+// Adds book
+async function addBook(obj) {
+  let newBook = new BookModel(obj);
+  return await newBook.save();
+}
+
+// Clears the database
+app.get('/clear', clear);
+async function clear(req, res) {
+  try {
+    await BookModel.deleteMany({});
+    res.status(200).send('Goodbye Database :(');
+  }
+  catch (err) {
+    res.status(500).send('Error Clearing Database');
+  }
+}
+
+//Task 1: Connects to mongoDB 
+mongoose.connect('mongodb://127.0.0.1:27017/books', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then( () => {
+    console.log('Connected to the database');
+  });
 
 app.get('/*', (request, response) => {
   response.status(404).send('Path does not exists');
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+
+

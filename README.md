@@ -1,4 +1,4 @@
-# Current Lab: 11
+# Current Lab: 12
 
 **Author**: Mark Thanadabouth
 
@@ -22,6 +22,32 @@ React, JavaScript, Auth0
 
 ## UML
 > <img src="./pics/lab11_UML.jpg" alt="UML" width="200"/>
+
+> <img src="./pics/Lab12 UML.jpg" alt="UML" width="200"/>
+
+### Lab: 11
+
+Name of feature: User Authentication with Auth0
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 2:30pm
+
+Finish time: 6:00pm(08/16)
+
+Actual time needed to complete: 6 hours
+
+### Lab: 12
+
+Name of feature: Storage/MongoDB
+
+Estimate of time needed to complete: 6 hours
+
+Start time: 9pm (08/17)
+
+Finish time: 8:30pm (08/19)
+
+Actual time needed to complete: 6 hours
 
 *Logistical*
 
@@ -71,19 +97,7 @@ React, JavaScript, Auth0
 
 > How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
 
-- Utilizing resources that we have such as other students, intructor, and TA's. Timeboxing when needed.
-
-### Lab: 11
-
-Name of feature: User Authentication with Auth0
-
-Estimate of time needed to complete: 2 hours
-
-Start time: 2:30pm
-
-Finish time: 6:00pm(08/16)
-
-Actual time needed to complete: 6 hours
+- Utilizing resources that we have such as other students, intructor, and TA's. Timeboxing when needed. 
 
 # Start your own "Can of Books" App
 
