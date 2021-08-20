@@ -1,6 +1,7 @@
+// Task 4: Modularize schema and model into own component
 const mongoose = require('mongoose');
 
-// Book Schema
+// Task 2: Book Schema
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
@@ -8,7 +9,7 @@ const bookSchema = new mongoose.Schema({
   email: { type: String, required: true },
 });
 
-// Book Model                        
+// Task 3: Book Model            'books' is the name of the collection                   
 const BookModel = mongoose.model('books', bookSchema);
 
 module.exports = BookModel;

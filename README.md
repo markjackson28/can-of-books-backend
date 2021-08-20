@@ -43,11 +43,11 @@ Name of feature: Storage/MongoDB
 
 Estimate of time needed to complete: 6 hours
 
-Start time: 
+Start time: 9pm (08/17)
 
-Finish time: 
+Finish time: 8:30pm (08/19)
 
-Actual time needed to complete:
+Actual time needed to complete: 6 hours
 
 *Logistical*
 
