@@ -1,4 +1,4 @@
-# Current Lab: 12
+# Current Lab: 13
 
 **Author**: Mark Thanadabouth
 
@@ -39,15 +39,15 @@ Actual time needed to complete: 6 hours
 
 ### Lab: 12
 
-Name of feature: Storage/MongoDB
+Name of feature: Add/Delete Book
 
-Estimate of time needed to complete: 6 hours
+Estimate of time needed to complete: 12 hours
 
-Start time: 9pm (08/17)
+Start time: 1:30pm (08/21)
 
-Finish time: 8:30pm (08/19)
+Finish time: 
 
-Actual time needed to complete: 6 hours
+Actual time needed to complete: 
 
 *Logistical*
 

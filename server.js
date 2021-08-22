@@ -11,6 +11,8 @@ const mongoose = require('mongoose');
 const BookModel = require('./modules/books');
 
 const app = express();
+// Needed to display json in post
+app.use(express.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 3001;
@@ -75,6 +77,30 @@ app.get('/books', async (req, res) => {
   }
 });
 
+// L13 Task 1:
+app.post('/post-books', (req, res) => {
+  // test to see post route
+  // res.send('Post Route Duh');
+  try {
+    let { title, description, status, email } = req.body;
+    // L13 Task 2:
+    // let objLit = {title, description, status, email};
+    // L13 Task 3:
+    let newBook = new BookModel({ title, description, status, email });
+    newBook.save();
+    res.send(newBook);
+  } catch (err) { // L13 Task 4:
+    res.status(500).send('Post Error: ', err);
+  }
+});
+
+// L13 Task 1 card 2
+app.delete('/delete-book/:id', async (req, res) => {
+  let bookId = req.params.id;
+  await BookModel.findByIdAndDelete(bookId);
+  res.send(`Book Deleted!`);
+});
+
 // Task 5: Seed the Database
 app.get('/seed', seed);
 async function seed(req, res) {
@@ -125,7 +151,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/books', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then( () => {
+  .then(() => {
     console.log('Connected to the database');
   });
 
