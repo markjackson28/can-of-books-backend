@@ -89,6 +89,8 @@ app.post('/post-books', (req, res) => {
     let newBook = new BookModel({ title, description, status, email });
     newBook.save();
     res.send(newBook);
+    // L13 Task 7 Server Response
+    console.log(`New Book Posted: `, newBook);
   } catch (err) { // L13 Task 4:
     res.status(500).send('Post Error: ', err);
   }
