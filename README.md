@@ -18,7 +18,7 @@ React, JavaScript, Auth0
 - (08/16) Finished Lab11
 
 ## Credit and Collaborations
-- Clarissa P, Alex P, Phil M, JP J, 
+- Clarissa P, Alex P, Phil M, JP J, Ryan G,
 
 ## UML
 > <img src="./pics/lab11_UML.jpg" alt="UML" width="200"/>
@@ -39,15 +39,27 @@ Actual time needed to complete: 6 hours
 
 ### Lab: 12
 
+Name of feature: Storage/MongoDB
+
+Estimate of time needed to complete: 6 hours
+
+Start time: 9pm (08/17)
+
+Finish time: 8:30pm (08/19)
+
+Actual time needed to complete: 6 hours
+
+### Lab: 13
+
 Name of feature: Add/Delete Book
 
 Estimate of time needed to complete: 12 hours
 
 Start time: 1:30pm (08/21)
 
-Finish time: 
+Finish time: 5pm (08/22);
 
-Actual time needed to complete: 
+Actual time needed to complete: About 7 hours
 
 *Logistical*
 
