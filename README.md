@@ -1,4 +1,4 @@
-# Current Lab: 13
+# Current Lab: 14
 
 **Author**: Mark Thanadabouth
 
@@ -60,6 +60,18 @@ Start time: 1:30pm (08/21)
 Finish time: 5pm (08/22);
 
 Actual time needed to complete: About 7 hours
+
+### Lab: 14
+
+Name of feature: Update Book
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 9:00pm (08/24)
+
+Finish time: 4pm (08/25)
+
+Actual time needed to complete: About 3 hours
 
 *Logistical*
 

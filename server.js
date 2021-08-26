@@ -51,6 +51,17 @@ app.get('/test', (req, res) => {
   });
 });
 
+app.get('/allbooks', (req, res) => {
+  BookModel.find({}, (err, dbResults) => {
+    if (err) {
+      res.send();
+      console.log('Cannot access DB');
+    } else {
+      res.status(200).send(dbResults);
+    }
+  });
+})
+
 // Task 6 create books route
 app.get('/books', async (req, res) => {
   try {
@@ -118,6 +129,18 @@ app.delete('/delete-book/:id', (req, res) => {
     });
   } catch (err) {
     res.status(500).send('Delete Error: ', err);
+  }
+});
+
+// Updates books
+app.put('/put-book/:id', async (req, res) => {
+  try {
+    let bookId = req.params.id;
+    let { title, description, status, email } = req.body;
+    const updatedBook = await BookModel.findByIdAndUpdate(bookId, { title, description, status, email }, { new: true, overwrite: true });
+    res.status(200).send(updatedBook);
+  } catch (err) {
+    res.status(500).send('Unable to update book', err);
   }
 });
 
